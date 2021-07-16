@@ -18,7 +18,7 @@ enum{
 
 
 // [[Rcpp::export]]
-int InterbeefWeaning_main(std::string paramFileName) {
+int StandardizeInterbeefResults_main(std::string paramFileName) {
 
   //Time tracking
   std::chrono::time_point<std::chrono::system_clock> start, end;
@@ -28,7 +28,7 @@ int InterbeefWeaning_main(std::string paramFileName) {
 
 
   std::cout<<"-----------------------------------------------------------------"<< std::endl;
-  std::cout << "START InterbeefWeaning_main() at " << std::ctime(&start_time) << std::endl;
+  std::cout << "START StandardizeInterbeefResults_main() at " << std::ctime(&start_time) << std::endl;
   std::cout<<"-----------------------------------------------------------------"<< std::endl;
 
 
@@ -63,7 +63,7 @@ int InterbeefWeaning_main(std::string paramFileName) {
   std::chrono::duration<double> elapsed_seconds = end-start;
   std::time_t end_time = std::chrono::system_clock::to_time_t(end);
   std::cout<<"\n-----------------------------------------------------------------"<< std::endl;
-  std::cout << "END InterbeefWeaning_main() at " << std::ctime(&end_time)
+  std::cout << "END StandardizeInterbeefResults_main() at " << std::ctime(&end_time)
   << "elapsed time: " << elapsed_seconds.count() << " s"<<std::endl;
   std::cout<<"-----------------------------------------------------------------"<< std::endl;
 
@@ -73,5 +73,5 @@ int InterbeefWeaning_main(std::string paramFileName) {
 
 //With RConsole ausführen
 /*** R
-InterbeefWeaning_main()
+StandardizeInterbeefResults_main()
 */
