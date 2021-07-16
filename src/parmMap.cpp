@@ -1,19 +1,15 @@
-//
-//  Copyright (c) 2016 Christian Stricker, agn genetics GmbH, Davos Switzerland. All rights reserved.
-//
-
 #include "parmMap.h"
 
 using namespace std;
 
 void ParmMap::inputParms(void){
-  
+
   ifstream inFile(this->fileName.c_str());
   if(!inFile) {
     std::cerr << "Couldn't open parmFile: " <<this->fileName << std::endl;
     exit (-1);
   }
-  
+
   string parmName, parmValue;
   ParmMap::iterator mapit;
   while (inFile >> parmName >> parmValue){
@@ -54,13 +50,13 @@ bool ParmMap::getBoolean(string parmName){
   istringstream istr(parmValue);
   //	bool boolValue;
   if(parmValue =="true") return true;
-  else if(parmValue =="false") return false; 
-  
+  else if(parmValue =="false") return false;
+
   else{
     cout << "getBoolean(): Unrecognized parameterValue "<<parmValue<<" in ParameterFile "<<fileName<<": " << parmName <<std::endl;
     exit(111);
   }
-  
+
 }
 
 string ParmMap::getString(string parmName){

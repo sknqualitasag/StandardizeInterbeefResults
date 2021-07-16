@@ -1,6 +1,3 @@
-//
-//  Copyright (c) 2016 Christian Stricker, agn genetics GmbH, Davos Switzerland. All rights reserved.
-//
 #ifndef PARM_MAP_H
 #define PARM_MAP_H
 
@@ -22,7 +19,7 @@ public:
   string getString(string parmName);
   bool getBoolean(string parmName);
   char* getCharPtr(string parmName);
-  
+
 };
 
-#endif 				
+#endif

@@ -1,6 +1,3 @@
-//
-//  Copyright (c) 2016 Christian Stricker, agn genetics GmbH, Davos Switzerland. All rights reserved.
-//
 #include "rutil.h"
 using namespace std;
 
