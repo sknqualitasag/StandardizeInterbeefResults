@@ -59,7 +59,7 @@ void animalMap::inputSolITB(char* fname1, string startYear, string endYear){
     country = colData[8];
     rec++;
     if(country == "che") {
-      animal *aPtr = new animal(myId, birthDateYYYYMMDD, numDescendants, numObs, -9999, -9999 , sol, acc, matSol, matAcc, -9999, -9999, false, false, -9999, CONSTANTS::STRING_NA); //Sophie
+      animal *aPtr = new animal(myId, birthDateYYYYMMDD, numDescendants, numObs, -9999, -9999 , sol, acc, matSol, matAcc, -9999, -9999, false, false, CONSTANTS::STRING_NA, CONSTANTS::STRING_NA); //Sophie
 
       if(rec%100000==0){
         cout<<rec<<" records processed \r";
@@ -107,10 +107,10 @@ void animalMap::inputPubInfoITB(char* fname1){
   std::string sep(";");
   std::string subStr;
   Tokenizer colData;
-  string inputStr, myId, birthDateYYYYMMDD, country, name;
+  string inputStr, myId, birthDateYYYYMMDD, country, name, statusOfBull;
   bool itbPubld, itbPublm;
   int numDescendants,numObs, rec=0, numCol, numFound=0, numSkipped=0, numSkipped1=0, numPubl=0;
-  int numDaughter, numProgrenies, numProgreniesCH, numHerdsCH, statusOfBull;
+  int numDaughter, numProgrenies, numProgreniesCH, numHerdsCH;
   double sol, acc, matSol, matAcc;
   while (getline(solfile,inputStr)) 	{
     // remove Mac carriage return from argument...
@@ -142,7 +142,7 @@ void animalMap::inputPubInfoITB(char* fname1){
     numHerdsCH= atoi(colData[12].c_str());
     itbPubld = stod(colData[13].c_str());
     itbPublm = stod(colData[15].c_str());
-    statusOfBull = atoi(colData[16].c_str());
+    statusOfBull = colData[16];
     name = colData[17];
 
     rec++;
@@ -173,7 +173,7 @@ void animalMap::inputPubInfoITB(char* fname1){
         ait->second->numHerdsCHWWITB = numHerdsCH;
         ait->second->itbPubldWWITB = itbPubld;
         ait->second->itbPublmWWITB = itbPublm;
-        ait->second->statusOfBullInt = statusOfBull;
+        ait->second->statusOfBullStr = statusOfBull;
         ait->second->nameStr = name;
 
         LOGD<<"ait->second->indITBStr "<<ait->second->indITBStr<<" is already in aMap therefore add some info"
@@ -242,14 +242,14 @@ void animalMap::standardizeITB(double mean, double std, string outfileITB, strin
 
     if(ptr->itbPubldWWITB){
 
-      outFilestdfmtQualitas<<ptr->indITBStr<<" wwd "<<ptr->numDescendantsWWITB<<" "<<ptr->numHerdsCHWWITB<<" "<<setprecision(2)<<ptr->scaledSolWWITB<<" "<<setprecision(2)<<ptr->accWWITB<<" ITB "<<"I "<<"Y "<<basisBreedYearAbreviation<<" "<<ptr->statusOfBullInt<<" "<<ptr->nameStr<<endl;
+      outFilestdfmtQualitas<<ptr->indITBStr<<" wwd "<<ptr->numDescendantsWWITB<<" "<<ptr->numHerdsCHWWITB<<" "<<setprecision(2)<<ptr->scaledSolWWITB<<" "<<setprecision(2)<<ptr->accWWITB<<" ITB "<<"I "<<"Y "<<basisBreedYearAbreviation<<" "<<ptr->statusOfBullStr<<" "<<ptr->nameStr<<endl;
       recd++;
       LOGD<<"ptr->indITBStr "<<ptr->indITBStr<<" is standardizedWWD and ready for publication.";
 
     }
     if(ptr->itbPublmWWITB){
 
-      outFilestdfmtQualitas<<ptr->indITBStr<<" wwm "<<ptr->numDaughterWWITB<<" "<<ptr->numHerdsCHWWITB<<" "<<setprecision(2)<<ptr->scaledSolMatWWITB<<" "<<setprecision(2)<<ptr->accWWITB<<" ITB "<<"I "<<"Y "<<basisBreedYearAbreviation<<" "<<ptr->statusOfBullInt<<" "<<ptr->nameStr<<endl;
+      outFilestdfmtQualitas<<ptr->indITBStr<<" wwm "<<ptr->numDaughterWWITB<<" "<<ptr->numHerdsCHWWITB<<" "<<setprecision(2)<<ptr->scaledSolMatWWITB<<" "<<setprecision(2)<<ptr->accWWITB<<" ITB "<<"I "<<"Y "<<basisBreedYearAbreviation<<" "<<ptr->statusOfBullStr<<" "<<ptr->nameStr<<endl;
       recm++;
       LOGD<<"ptr->indITBStr "<<ptr->indITBStr<<" is standardizedWWM and ready for publication.";
 
