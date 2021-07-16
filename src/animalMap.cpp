@@ -107,10 +107,10 @@ void animalMap::inputPubInfoITB(char* fname1){
   std::string sep(";");
   std::string subStr;
   Tokenizer colData;
-  string inputStr, myId, birthDateYYYYMMDD, country;
+  string inputStr, myId, birthDateYYYYMMDD, country, name;
   bool itbPubld, itbPublm;
   int numDescendants,numObs, rec=0, numCol, numFound=0, numSkipped=0, numSkipped1=0, numPubl=0;
-  int numDaughter, numProgrenies, numProgreniesCH, numHerdsCH;
+  int numDaughter, numProgrenies, numProgreniesCH, numHerdsCH, statusOfBull;
   double sol, acc, matSol, matAcc;
   while (getline(solfile,inputStr)) 	{
     // remove Mac carriage return from argument...
@@ -142,6 +142,9 @@ void animalMap::inputPubInfoITB(char* fname1){
     numHerdsCH= atoi(colData[12].c_str());
     itbPubld = stod(colData[13].c_str());
     itbPublm = stod(colData[15].c_str());
+    statusOfBull = atoi(colData[16].c_str());
+    name = colData[17];
+
     rec++;
     if(country == "che") {
 
@@ -152,7 +155,7 @@ void animalMap::inputPubInfoITB(char* fname1){
 
       map<string,animal*>::iterator ait = this->find(myId);
       if(ait == this->end()){
-        animal *aPtr = new animal(myId, birthDateYYYYMMDD, numDescendants, numObs, numDaughter, numProgrenies, sol, acc, matSol, matAcc, numProgreniesCH, numHerdsCH, itbPubld, itbPublm); //Sophie
+        animal *aPtr = new animal(myId, birthDateYYYYMMDD, numDescendants, numObs, numDaughter, numProgrenies, sol, acc, matSol, matAcc, numProgreniesCH, numHerdsCH, itbPubld, itbPublm, statusOfBull, name); //Sophie
         (*this)[aPtr->indITBStr] = aPtr;
 
         LOGD<<"aPtr->indITBStr "<<aPtr->indITBStr<<" , aPtr->birthYearStr "<<aPtr->birthYearStr<<" ,aPtr->birthMonthSt "<<aPtr->birthMonthStr<<" ,aPtr->birthDayStr "<<aPtr->birthDayStr
@@ -170,6 +173,8 @@ void animalMap::inputPubInfoITB(char* fname1){
         ait->second->numHerdsCHWWITB = numHerdsCH;
         ait->second->itbPubldWWITB = itbPubld;
         ait->second->itbPublmWWITB = itbPublm;
+        ait->second->statusOfBullInt = statusOfBull;
+        ait->second->nameStr = name;
 
         LOGD<<"ait->second->indITBStr "<<ait->second->indITBStr<<" is already in aMap therefore add some info"
             <<" , ait->second->numDaughterWWITB " <<ait->second->numDaughterWWITB<<" ,ait->second->numProgreniesWWIT  "<<ait->second->numProgreniesWWITB
@@ -223,7 +228,7 @@ void animalMap::standardizeITB(double mean, double std, string outfileITB, strin
   }
   //Not scientific notation: https://stackoverflow.com/questions/2335657/prevent-scientific-notation-in-ostream-when-using-with-double
   outFilestdfmtQualitas.setf(ios_base::fixed);
-  outFilestdfmtQualitas<<"idaITB trait nDau nHerd estimate rel type label pubCode base"<<endl;
+  outFilestdfmtQualitas<<"idaITB trait nDau nHerd estimate rel type label pubCode base statusOfBull name"<<endl;
 
   for(map<string, animal*>::iterator ait=this->begin(); ait != this->end(); ait++){
     animal* ptr = ait->second;
@@ -237,14 +242,14 @@ void animalMap::standardizeITB(double mean, double std, string outfileITB, strin
 
     if(ptr->itbPubldWWITB){
 
-      outFilestdfmtQualitas<<ptr->indITBStr<<" wwd "<<ptr->numDescendantsWWITB<<" "<<ptr->numHerdsCHWWITB<<" "<<setprecision(2)<<ptr->scaledSolWWITB<<" "<<setprecision(2)<<ptr->accWWITB<<" ITB "<<"I "<<"Y "<<basisBreedYearAbreviation<<endl;
+      outFilestdfmtQualitas<<ptr->indITBStr<<" wwd "<<ptr->numDescendantsWWITB<<" "<<ptr->numHerdsCHWWITB<<" "<<setprecision(2)<<ptr->scaledSolWWITB<<" "<<setprecision(2)<<ptr->accWWITB<<" ITB "<<"I "<<"Y "<<basisBreedYearAbreviation<<" "<<ptr->statusOfBullInt<<" "<<ptr->nameStr<<endl;
       recd++;
       LOGD<<"ptr->indITBStr "<<ptr->indITBStr<<" is standardizedWWD and ready for publication.";
 
     }
     if(ptr->itbPublmWWITB){
 
-      outFilestdfmtQualitas<<ptr->indITBStr<<" wwm "<<ptr->numDaughterWWITB<<" "<<ptr->numHerdsCHWWITB<<" "<<setprecision(2)<<ptr->scaledSolMatWWITB<<" "<<setprecision(2)<<ptr->accWWITB<<" ITB "<<"I "<<"Y "<<basisBreedYearAbreviation<<endl;
+      outFilestdfmtQualitas<<ptr->indITBStr<<" wwm "<<ptr->numDaughterWWITB<<" "<<ptr->numHerdsCHWWITB<<" "<<setprecision(2)<<ptr->scaledSolMatWWITB<<" "<<setprecision(2)<<ptr->accWWITB<<" ITB "<<"I "<<"Y "<<basisBreedYearAbreviation<<" "<<ptr->statusOfBullInt<<" "<<ptr->nameStr<<endl;
       recm++;
       LOGD<<"ptr->indITBStr "<<ptr->indITBStr<<" is standardizedWWM and ready for publication.";
 

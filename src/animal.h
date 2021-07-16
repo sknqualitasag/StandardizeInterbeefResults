@@ -27,13 +27,13 @@ class animal {
 public:
 
   double meanWW,meanMatWW;
-  string myId, breed;
+  string myId, breed, nameStr;
   bool base;
   string birthDateYYYYMMDDITB;
-  int numDescendantsWWITB, numObsWWITB, numDaughterWWITB, numProgreniesWWITB, numProgreniesCHWWITB, numHerdsCHWWITB, itbPubldWWITB, itbPublmWWITB;
+  int numDescendantsWWITB, numObsWWITB, numDaughterWWITB, numProgreniesWWITB, numProgreniesCHWWITB, numHerdsCHWWITB, itbPubldWWITB, itbPublmWWITB, statusOfBullInt;
   double solWWITB, scaledSolWWITB, accWWITB, solMatWWITB, scaledSolMatWWITB, matAccWWITB;
 
-  animal(string myId, string birthDateYYYYMMDD, int numDescendants, int numObs, int numDaughter, int numProgrenies, double sol, double acc, double matSol, double matAcc, int numProgreniesCH, int numHerdsCH, double itbPubld, double itbPublm); //Sophie
+  animal(string myId, string birthDateYYYYMMDD, int numDescendants, int numObs, int numDaughter, int numProgrenies, double sol, double acc, double matSol, double matAcc, int numProgreniesCH, int numHerdsCH, double itbPubld, double itbPublm,  int statusOfBull, string name); //Sophie
   string indITBStr, birthYearStr, birthMonthStr, birthDayStr, indITBBreedStr, sexITBStr;
   int birthYearInt, birthMonthInt, birthDayInt;
   string getVerifiedITBNr(string id);
