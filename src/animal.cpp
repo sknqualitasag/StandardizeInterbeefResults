@@ -20,7 +20,7 @@
 
 using namespace std;
 
-animal::  animal(string myId, string birthDateYYYYMMDD, int numDescendants, int numObs, int numDaughter, int numProgrenies, double sol, double acc, double matSol, double matAcc, int numProgreniesCH, int numHerdsCH, double itbPubld, double itbPublm, string statusOfBull, string name){ //Sophie
+animal::  animal(string myId, string birthDateYYYYMMDD, int numDescendants, int numObs, int numDaughter, int numProgrenies, double sol, double acc, double matSol, double matAcc, int numProgreniesCH, int numHerdsCH, double itbPubld, double itbPublm, int statusOfBull, string name){ //Sophie
 
 
   indITBStr = getVerifiedITBNr(myId);
@@ -70,7 +70,7 @@ animal::  animal(string myId, string birthDateYYYYMMDD, int numDescendants, int 
   numHerdsCHWWITB = numHerdsCH;
   itbPubldWWITB = itbPubld;
   itbPublmWWITB = itbPublm;
-  statusOfBullStr = statusOfBull;
+  statusOfBullInt = statusOfBull;
   nameStr = name;
 
 
