@@ -5,14 +5,14 @@
 
 using namespace Rcpp;
 
-// InterbeefWeaning_main
-int InterbeefWeaning_main(std::string paramFileName);
-RcppExport SEXP _StandardizeInterbeefResults_InterbeefWeaning_main(SEXP paramFileNameSEXP) {
+// StandardizeInterbeefResults_main
+int StandardizeInterbeefResults_main(std::string paramFileName);
+RcppExport SEXP _StandardizeInterbeefResults_StandardizeInterbeefResults_main(SEXP paramFileNameSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< std::string >::type paramFileName(paramFileNameSEXP);
-    rcpp_result_gen = Rcpp::wrap(InterbeefWeaning_main(paramFileName));
+    rcpp_result_gen = Rcpp::wrap(StandardizeInterbeefResults_main(paramFileName));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -28,7 +28,7 @@ END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_StandardizeInterbeefResults_InterbeefWeaning_main", (DL_FUNC) &_StandardizeInterbeefResults_InterbeefWeaning_main, 1},
+    {"_StandardizeInterbeefResults_StandardizeInterbeefResults_main", (DL_FUNC) &_StandardizeInterbeefResults_StandardizeInterbeefResults_main, 1},
     {"_StandardizeInterbeefResults_rcpp_hello", (DL_FUNC) &_StandardizeInterbeefResults_rcpp_hello, 0},
     {NULL, NULL, 0}
 };
