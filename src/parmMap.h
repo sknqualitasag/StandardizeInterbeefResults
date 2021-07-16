@@ -1,0 +1,28 @@
+//
+//  Copyright (c) 2016 Christian Stricker, agn genetics GmbH, Davos Switzerland. All rights reserved.
+//
+#ifndef PARM_MAP_H
+#define PARM_MAP_H
+
+#include <fstream>
+#include <iomanip>
+#include <iostream>
+#include <string>
+#include <map>
+#include <sstream>
+
+
+using namespace std;
+class ParmMap: public map<std::string,std::string> {
+public:
+  string fileName;
+  void inputParms(void);
+  double getDouble(string parmName);
+  unsigned getUnsigned(string parmName);
+  string getString(string parmName);
+  bool getBoolean(string parmName);
+  char* getCharPtr(string parmName);
+  
+};
+
+#endif 				
