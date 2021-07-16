@@ -33,7 +33,7 @@ public:
   int numDescendantsWWITB, numObsWWITB, numDaughterWWITB, numProgreniesWWITB, numProgreniesCHWWITB, numHerdsCHWWITB, itbPubldWWITB, itbPublmWWITB;
   double solWWITB, scaledSolWWITB, accWWITB, solMatWWITB, scaledSolMatWWITB, matAccWWITB;
 
-  animal(string myId, string birthDateYYYYMMDD, int numDescendants, int numObs, int numDaughter, int numProgrenies, double sol, double acc, double matSol, double matAcc, int numProgreniesCH, int numHerdsCH, double itbPubld, double itbPublm,  int statusOfBull, string name); //Sophie
+  animal(string myId, string birthDateYYYYMMDD, int numDescendants, int numObs, int numDaughter, int numProgrenies, double sol, double acc, double matSol, double matAcc, int numProgreniesCH, int numHerdsCH, double itbPubld, double itbPublm,  string statusOfBull, string name); //Sophie
   string indITBStr, birthYearStr, birthMonthStr, birthDayStr, indITBBreedStr, sexITBStr;
   int birthYearInt, birthMonthInt, birthDayInt;
   string getVerifiedITBNr(string id);
