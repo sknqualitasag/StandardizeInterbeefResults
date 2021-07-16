@@ -27,10 +27,10 @@ class animal {
 public:
 
   double meanWW,meanMatWW;
-  string myId, breed, nameStr;
+  string myId, breed, statusOfBullStr, nameStr;
   bool base;
   string birthDateYYYYMMDDITB;
-  int numDescendantsWWITB, numObsWWITB, numDaughterWWITB, numProgreniesWWITB, numProgreniesCHWWITB, numHerdsCHWWITB, itbPubldWWITB, itbPublmWWITB, statusOfBullInt;
+  int numDescendantsWWITB, numObsWWITB, numDaughterWWITB, numProgreniesWWITB, numProgreniesCHWWITB, numHerdsCHWWITB, itbPubldWWITB, itbPublmWWITB;
   double solWWITB, scaledSolWWITB, accWWITB, solMatWWITB, scaledSolMatWWITB, matAccWWITB;
 
   animal(string myId, string birthDateYYYYMMDD, int numDescendants, int numObs, int numDaughter, int numProgrenies, double sol, double acc, double matSol, double matAcc, int numProgreniesCH, int numHerdsCH, double itbPubld, double itbPublm,  int statusOfBull, string name); //Sophie
