@@ -59,7 +59,7 @@ void animalMap::inputSolITB(char* fname1, string startYear, string endYear){
     country = colData[8];
     rec++;
     if(country == "che") {
-      animal *aPtr = new animal(myId, birthDateYYYYMMDD, numDescendants, numObs, -9999, -9999 , sol, acc, matSol, matAcc, -9999, -9999, false, false); //Sophie
+      animal *aPtr = new animal(myId, birthDateYYYYMMDD, numDescendants, numObs, -9999, -9999 , sol, acc, matSol, matAcc, -9999, -9999, false, false, -9999,CONSTANTS::STRING_NA); //Sophie
 
       if(rec%100000==0){
         cout<<rec<<" records processed \r";
