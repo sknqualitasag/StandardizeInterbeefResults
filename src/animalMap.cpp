@@ -242,14 +242,14 @@ void animalMap::standardizeITB(double mean, double std, string outfileITB, strin
 
     if(ptr->itbPubldWWITB){
 
-      outFilestdfmtQualitas<<ptr->indITBStr<<" wwd "<<ptr->numDescendantsWWITB<<" "<<ptr->numHerdsCHWWITB<<" "<<setprecision(2)<<ptr->scaledSolWWITB<<" "<<setprecision(2)<<ptr->accWWITB<<" ITB "<<"I "<<"Y "<<basisBreedYearAbreviation<<" "<<ptr->statusOfBullStr<<" "<<ptr->nameStr<<endl;
+      outFilestdfmtQualitas<<ptr->indITBStr<<" wwd "<<ptr->numDescendantsWWITB<<" "<<ptr->numHerdsCHWWITB<<" "<<setprecision(2)<<ptr->scaledSolWWITB<<" "<<setprecision(2)<<ptr->accWWITB<<" ITB "<<"I "<<"Y "<<basisBreedYearAbreviation<<" "<<ptr->statusOfBullStr<<" \""<<ptr->nameStr<<"\""<<endl;
       recd++;
       LOGD<<"ptr->indITBStr "<<ptr->indITBStr<<" is standardizedWWD and ready for publication.";
 
     }
     if(ptr->itbPublmWWITB){
 
-      outFilestdfmtQualitas<<ptr->indITBStr<<" wwm "<<ptr->numDaughterWWITB<<" "<<ptr->numHerdsCHWWITB<<" "<<setprecision(2)<<ptr->scaledSolMatWWITB<<" "<<setprecision(2)<<ptr->accWWITB<<" ITB "<<"I "<<"Y "<<basisBreedYearAbreviation<<" "<<ptr->statusOfBullStr<<" "<<ptr->nameStr<<endl;
+      outFilestdfmtQualitas<<ptr->indITBStr<<" wwm "<<ptr->numDaughterWWITB<<" "<<ptr->numHerdsCHWWITB<<" "<<setprecision(2)<<ptr->scaledSolMatWWITB<<" "<<setprecision(2)<<ptr->accWWITB<<" ITB "<<"I "<<"Y "<<basisBreedYearAbreviation<<" "<<ptr->statusOfBullStr<<" '"<<ptr->nameStr<<endl;
       recm++;
       LOGD<<"ptr->indITBStr "<<ptr->indITBStr<<" is standardizedWWM and ready for publication.";
 
