@@ -58,27 +58,27 @@ animal::  animal(string myId, string birthDateYYYYMMDD, int numDescendants, int 
     birthDayStr = "-9999";
   }
 
-  numDescendantsWWITB = numDescendants;
-  numObsWWITB = numObs;
-  numDaughterWWITB = numDaughter;
-  numProgreniesWWITB = numProgrenies;
-  solWWITB = sol;
-  accWWITB = acc;
-  solMatWWITB = matSol;
-  matAccWWITB = matAcc;
-  numProgreniesCHWWITB = numProgreniesCH;
-  numHerdsCHWWITB = numHerdsCH;
-  itbPubldWWITB = itbPubld;
-  itbPublmWWITB = itbPublm;
+  numDescendantsITB = numDescendants;
+  numObsITB = numObs;
+  numDaughterITB = numDaughter;
+  numProgreniesITB = numProgrenies;
+  solITB = sol;
+  accITB = acc;
+  solMatITB = matSol;
+  matAccITB = matAcc;
+  numProgreniesCHITB = numProgreniesCH;
+  numHerdsCHITB = numHerdsCH;
+  itbPubldITB = itbPubld;
+  itbPublmITB = itbPublm;
   statusOfBullStr = statusOfBull;
   nameStr = name;
 
 
-  scaledSolWWITB = -9999.0;
-  scaledSolMatWWITB = -9999.0;
+  scaledSolITB = -9999.0;
+  scaledSolMatITB = -9999.0;
   base = false;
-  meanWW = 0.0;
-  meanMatWW = 0.0;
+  meanDir = 0.0;
+  meanMat = 0.0;
 
 
 
