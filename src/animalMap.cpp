@@ -71,8 +71,8 @@ void animalMap::inputSolITB(char* fname1, string startYear, string endYear){
           (*this)[aPtr->indITBStr] = aPtr;
 
         LOGD<<"aPtr->indITBStr "<<aPtr->indITBStr<<" , aPtr->birthYearStr "<<aPtr->birthYearStr<<" ,aPtr->birthMonthSt "<<aPtr->birthMonthStr<<" ,aPtr->birthDayStr "<<aPtr->birthDayStr
-            <<" ,aPtr->numDescendantsWWITB "<<aPtr->numDescendantsWWITB<<" ,aPtr->numObsWWITB "<<aPtr->numObsWWITB<<" ,aPtr->solWWITB "<<aPtr->solWWITB<<" ,aPtr->solMatWWITB "<<aPtr->solMatWWITB
-            <<" ,aPtr->accWWITB "<<aPtr->accWWITB<<" , aPtr->matAccWWITB "<<aPtr->matAccWWITB;
+            <<" ,aPtr->numDescendantsITB "<<aPtr->numDescendantsITB<<" ,aPtr->numObsITB "<<aPtr->numObsITB<<" ,aPtr->solITB "<<aPtr->solITB<<" ,aPtr->solMatITB "<<aPtr->solMatITB
+            <<" ,aPtr->accITB "<<aPtr->accITB<<" , aPtr->matAccITB "<<aPtr->matAccITB;
 
         }
 
@@ -159,27 +159,27 @@ void animalMap::inputPubInfoITB(char* fname1){
         (*this)[aPtr->indITBStr] = aPtr;
 
         LOGD<<"aPtr->indITBStr "<<aPtr->indITBStr<<" , aPtr->birthYearStr "<<aPtr->birthYearStr<<" ,aPtr->birthMonthSt "<<aPtr->birthMonthStr<<" ,aPtr->birthDayStr "<<aPtr->birthDayStr
-            <<" ,aPtr->numDescendantsWWITB "<<aPtr->numDescendantsWWITB<<" ,aPtr->numObsWWITB "<<aPtr->numObsWWITB
-            <<" , aPtr->numDaughterWWITB " <<aPtr->numDaughterWWITB<<" ,aPtr->numProgreniesWWIT  "<<aPtr->numProgreniesWWITB
-            <<" ,aPtr->solWWITB "<<aPtr->solWWITB<<" ,aPtr->solMatWWITB "<<aPtr->solMatWWITB
-            <<" ,aPtr->accWWITB "<<aPtr->accWWITB<<" , aPtr->matAccWWITB "<<aPtr->matAccWWITB
-            <<" , aPtr->numProgreniesCHWWITB "<<aPtr->numProgreniesCHWWITB<<" ,aPtr->numHerdsCHWWITB "<<aPtr->numHerdsCHWWITB
-            <<" ,aPtr->itbPubldWWIT "<<aPtr->itbPubldWWITB<<" , aPtr->itbPublmWWIT "<<aPtr->itbPublmWWITB;
+            <<" ,aPtr->numDescendantsITB "<<aPtr->numDescendantsITB<<" ,aPtr->numObsITB "<<aPtr->numObsITB
+            <<" , aPtr->numDaughterITB " <<aPtr->numDaughterITB<<" ,aPtr->numProgreniesIT  "<<aPtr->numProgreniesITB
+            <<" ,aPtr->solITB "<<aPtr->solITB<<" ,aPtr->solMatITB "<<aPtr->solMatITB
+            <<" ,aPtr->accITB "<<aPtr->accITB<<" , aPtr->matAccITB "<<aPtr->matAccITB
+            <<" , aPtr->numProgreniesCHITB "<<aPtr->numProgreniesCHITB<<" ,aPtr->numHerdsCHITB "<<aPtr->numHerdsCHITB
+            <<" ,aPtr->itbPubldITB "<<aPtr->itbPubldITB<<" , aPtr->itbPublmIT "<<aPtr->itbPublmITB;
 
       }else{
-        ait->second->numDaughterWWITB = numDaughter;
-        ait->second->numProgreniesWWITB = numProgrenies;
-        ait->second->numProgreniesCHWWITB = numProgreniesCH;
-        ait->second->numHerdsCHWWITB = numHerdsCH;
-        ait->second->itbPubldWWITB = itbPubld;
-        ait->second->itbPublmWWITB = itbPublm;
+        ait->second->numDaughterITB = numDaughter;
+        ait->second->numProgreniesITB = numProgrenies;
+        ait->second->numProgreniesCHITB = numProgreniesCH;
+        ait->second->numHerdsCHITB = numHerdsCH;
+        ait->second->itbPubldITB = itbPubld;
+        ait->second->itbPublmITB = itbPublm;
         ait->second->statusOfBullStr = statusOfBull;
         ait->second->nameStr = name;
 
         LOGD<<"ait->second->indITBStr "<<ait->second->indITBStr<<" is already in aMap therefore add some info"
-            <<" , ait->second->numDaughterWWITB " <<ait->second->numDaughterWWITB<<" ,ait->second->numProgreniesWWIT  "<<ait->second->numProgreniesWWITB
-            <<" , ait->second->numProgreniesCHWWITB "<<ait->second->numProgreniesCHWWITB<<" ,ait->second->numHerdsCHWWITB "<<ait->second->numHerdsCHWWITB
-            <<" , ait->second->itbPubldWWIT "<<ait->second->itbPubldWWITB<<" , ait->second->itbPublmWWIT "<<ait->second->itbPublmWWITB;
+            <<" , ait->second->numDaughterITB " <<ait->second->numDaughterITB<<" ,ait->second->numProgreniesIT  "<<ait->second->numProgreniesITB
+            <<" , ait->second->numProgreniesCHITB "<<ait->second->numProgreniesCHITB<<" ,ait->second->numHerdsCHITB "<<ait->second->numHerdsCHITB
+            <<" , ait->second->itbPubldIT "<<ait->second->itbPubldITB<<" , ait->second->itbPublmIT "<<ait->second->itbPublmITB;
 
       }
     }
@@ -196,7 +196,7 @@ void animalMap::standardizeITB(double mean, double std, string outfileITB, strin
   cout<<"\nstandardizeITB(): Standardize interbeef ebvs "<<endl;
   cout<<"*****************************************************************"<< endl;
 
-  double sumWWITB = 0, meanWWITB = 0, sumMatWWITB = 0, meanMatWWITB = 0, multiWWITB = 0, multiMatWWITB = 0, sdWWITB = 0, sdMatWWITB = 0, num = 0;
+  double sumITB = 0, meanITB = 0, sumMatITB = 0, meanMatITB = 0, multiITB = 0, multiMatITB = 0, sdITB = 0, sdMatITB = 0, num = 0;
   int recd = 0, recm = 0;
 
   for(map<string, animal*>::iterator ait=this->begin(); ait != this->end(); ait++){
@@ -204,19 +204,19 @@ void animalMap::standardizeITB(double mean, double std, string outfileITB, strin
 
     if(ptr->base){
       LOGD<<"ptr->indITBStr "<<ptr->indITBStr<<" is in the base, ptr->birthYearStr "<<ptr->birthYearStr
-          <<" ,ptr->solWWITB "<<ptr->solWWITB<<" ,ptr->solMatWWITB "<<ptr->solMatWWITB;
+          <<" ,ptr->solITB "<<ptr->solITB<<" ,ptr->solMatITB "<<ptr->solMatITB;
 
-      sumWWITB += ptr->solWWITB;
-      sumMatWWITB += ptr->solMatWWITB;
-      multiWWITB += ptr->solWWITB * ptr->solWWITB;
-      multiMatWWITB += ptr->solMatWWITB * ptr->solMatWWITB;
+      sumITB += ptr->solITB;
+      sumMatITB += ptr->solMatITB;
+      multiITB += ptr->solITB * ptr->solITB;
+      multiMatITB += ptr->solMatITB * ptr->solMatITB;
       num++;
 
-      meanWWITB = sumWWITB/num;
-      meanMatWWITB = sumMatWWITB/num;
+      meanITB = sumITB/num;
+      meanMatITB = sumMatITB/num;
 
-      sdWWITB = sqrt((multiWWITB/num - (meanWWITB*meanWWITB))*(num/(num-1)));
-      sdMatWWITB = sqrt((multiMatWWITB/num - (meanMatWWITB*meanMatWWITB))*(num/(num-1)));
+      sdITB = sqrt((multiITB/num - (meanITB*meanITB))*(num/(num-1)));
+      sdMatITB = sqrt((multiMatITB/num - (meanMatITB*meanMatITB))*(num/(num-1)));
     }
   }
 
@@ -233,25 +233,25 @@ void animalMap::standardizeITB(double mean, double std, string outfileITB, strin
   for(map<string, animal*>::iterator ait=this->begin(); ait != this->end(); ait++){
     animal* ptr = ait->second;
 
-    ptr->scaledSolWWITB = (((ptr->solWWITB - meanWWITB)/sdWWITB)*std)+mean;
-    ptr->scaledSolMatWWITB = (((ptr->solMatWWITB - meanMatWWITB)/sdMatWWITB)*std)+mean;
+    ptr->scaledSolITB = (((ptr->solITB - meanITB)/sdITB)*std)+mean;
+    ptr->scaledSolMatITB = (((ptr->solMatITB - meanMatITB)/sdMatITB)*std)+mean;
 
-    LOGD<<"ptr->indITBStr "<<ptr->indITBStr<<" is standardized for wwd "<<ptr->scaledSolWWITB<<" and for wwm "<<ptr->scaledSolMatWWITB;
+    LOGD<<"ptr->indITBStr "<<ptr->indITBStr<<" is standardized for interbeef-d-trait "<<ptr->scaledSolITB<<" and for interbeef-m-trait "<<ptr->scaledSolMatITB;
 
 
 
-    if(ptr->itbPubldWWITB){
+    if(ptr->itbPubldITB){
 
-      outFilestdfmtQualitas<<ptr->indITBStr<<" wwd "<<ptr->numDescendantsWWITB<<" "<<ptr->numHerdsCHWWITB<<" "<<setprecision(2)<<ptr->scaledSolWWITB<<" "<<setprecision(2)<<ptr->accWWITB<<" ITB "<<"I "<<"Y "<<basisBreedYearAbreviation<<" "<<ptr->statusOfBullStr<<" \""<<ptr->nameStr<<"\""<<endl;
+      outFilestdfmtQualitas<<ptr->indITBStr<<" dir "<<ptr->numDescendantsITB<<" "<<ptr->numHerdsCHITB<<" "<<setprecision(2)<<ptr->scaledSolITB<<" "<<setprecision(2)<<ptr->accITB<<" ITB "<<"I "<<"Y "<<basisBreedYearAbreviation<<" "<<ptr->statusOfBullStr<<" \""<<ptr->nameStr<<"\""<<endl;
       recd++;
-      LOGD<<"ptr->indITBStr "<<ptr->indITBStr<<" is standardizedWWD and ready for publication.";
+      LOGD<<"ptr->indITBStr "<<ptr->indITBStr<<" is standardized direct interbeef trait and ready for publication.";
 
     }
-    if(ptr->itbPublmWWITB){
+    if(ptr->itbPublmITB){
 
-      outFilestdfmtQualitas<<ptr->indITBStr<<" wwm "<<ptr->numDaughterWWITB<<" "<<ptr->numHerdsCHWWITB<<" "<<setprecision(2)<<ptr->scaledSolMatWWITB<<" "<<setprecision(2)<<ptr->accWWITB<<" ITB "<<"I "<<"Y "<<basisBreedYearAbreviation<<" "<<ptr->statusOfBullStr<<" \""<<ptr->nameStr<<"\""<<endl;
+      outFilestdfmtQualitas<<ptr->indITBStr<<" mat "<<ptr->numDaughterITB<<" "<<ptr->numHerdsCHITB<<" "<<setprecision(2)<<ptr->scaledSolMatITB<<" "<<setprecision(2)<<ptr->accITB<<" ITB "<<"I "<<"Y "<<basisBreedYearAbreviation<<" "<<ptr->statusOfBullStr<<" \""<<ptr->nameStr<<"\""<<endl;
       recm++;
-      LOGD<<"ptr->indITBStr "<<ptr->indITBStr<<" is standardizedWWM and ready for publication.";
+      LOGD<<"ptr->indITBStr "<<ptr->indITBStr<<" is standardized maternal interbeef trait and ready for publication.";
 
 
     }
@@ -259,13 +259,13 @@ void animalMap::standardizeITB(double mean, double std, string outfileITB, strin
 
   }
 
-  cout<<"\nmeanWWITB : "<<meanWWITB<<endl;
-  cout<<"\nsdWWITB : "<<sdWWITB<<endl;
-  cout<<"\nmeanMatWWITB : "<<meanMatWWITB<<endl;
-  cout<<"\nsdMatWWITB : "<<sdMatWWITB<<endl;
+  cout<<"\nmeanITB : "<<meanITB<<endl;
+  cout<<"\nsdITB : "<<sdITB<<endl;
+  cout<<"\nmeanMatITB : "<<meanMatITB<<endl;
+  cout<<"\nsdMatITB : "<<sdMatITB<<endl;
   cout<<"\nnumber in basis : "<<num<<endl;
 
-  cout<<"\nnumber of animals for the publication of interbeef weaning weight direct ebvs : "<<recd<<endl;
-  cout<<"\nnumber of animals for the publication of interbeef weaning weight maternal ebvs : "<<recm<<endl;
+  cout<<"\nnumber of animals for the publication of interbeef direct trait ebvs : "<<recd<<endl;
+  cout<<"\nnumber of animals for the publication of interbeef maternal trait ebvs : "<<recm<<endl;
 
 }
