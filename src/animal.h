@@ -26,7 +26,7 @@ using namespace std;
 class animal {
 public:
 
-  double meanWW,meanMatWW;
+  double meanDir,meanMat;
   string myId, breed, nameStr, statusOfBullStr;
   bool base;
   string birthDateYYYYMMDDITB;
